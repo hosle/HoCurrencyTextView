@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CurrencyTextView">
+        <attr name="currencySymbol" format="string"/>
+        <attr name="currencySymbolSize" format="dimension|reference" />
+        <attr name="decimalTextSize" format="dimension|reference" />
+        <attr name="prefixSuffixTextSize" format="dimension|reference" />
+        <attr name="strikeThrough" format="boolean"/>
+        <attr name="nullToZero" format="boolean"/>
+    </declare-styleable>
+</resources>

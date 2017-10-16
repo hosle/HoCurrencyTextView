@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context="com.hosle.hocurrencytextview.MainActivity">
+
+    <TextView
+        style="@style/DescriptionStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Regular (常规展示) : " />
+
+    <com.hosle.libcurrencyview.CurrencyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/currency_margin_top"
+        android:text="143.22" />
+
+
+    <TextView
+        style="@style/DescriptionStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Customized currency symbol and symbol size (自定义货币符号及字号) : " />
+
+    <com.hosle.libcurrencyview.CurrencyTextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/currency_margin_top"
+        android:text="143.22"
+        android:textSize="16dp"
+        app:currencySymbol="$"
+        app:currencySymbolSize="20dp"
+        app:nullToZero="true" />
+
+    <TextView
+        style="@style/DescriptionStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3. Customized the decimal font size (自定义小数部分字号) : " />
+
+    <com.hosle.libcurrencyview.CurrencyTextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/currency_margin_top"
+        android:text="143.22"
+        android:textSize="16dp"
+        app:currencySymbolSize="12dp"
+        app:decimalTextSize="12dp"
+        app:nullToZero="true" />
+
+    <TextView
+        style="@style/DescriptionStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4. Setting strikeThrough style (添加划线样式) : " />
+
+    <com.hosle.libcurrencyview.CurrencyTextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/currency_margin_top"
+        android:text="143.22"
+        android:textSize="16dp"
+        app:currencySymbolSize="12dp"
+        app:nullToZero="true"
+        app:strikeThrough="true" />
+
+    <TextView
+        style="@style/DescriptionStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5. Translating empty content to be default 0 (设定空文案默认为0元) : " />
+
+    <com.hosle.libcurrencyview.CurrencyTextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/currency_margin_top"
+        android:textSize="16dp"
+        app:nullToZero="true" />
+
+    <TextView
+        style="@style/DescriptionStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6. Customized prefix and suffix text (添加前后缀文案) : " />
+
+    <com.hosle.libcurrencyview.CurrencyTextView
+        android:id="@+id/textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/currency_margin_top"
+        android:text="23454.132"
+        android:textSize="16dp"
+        app:currencySymbolSize="12dp"
+        app:decimalTextSize="12dp"
+        app:nullToZero="true"
+        app:prefixSuffixTextSize="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="===============================\n\nCopyright (C) 2017. Henry Tam (hosle)\nContact: hosle@163.com\nGitHub: github.com/hosle"
+        android:textSize="13dp"
+        android:textStyle="italic" />
+
+</LinearLayout>
