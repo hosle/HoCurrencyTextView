@@ -2,14 +2,14 @@
 
 It's common to format numeric text to currency in E-commerce Apps. I am providing a customized textview that implement the formatting process in Android. Some useful APIs to customize its style are also provided.
 
-#Features
+# Features
 * Adjust text string to currency format automatically. (Item 1 & item 2 in demo figure)
 * Allow to add suffix or prefix text. (Item 6 in demo figure)
 * Supporting strikethrough style. (Item 4 in demo figure)
 * Supporting customize font size of each part, including currency symbol, integer, decimal and suffix/prefix. (Item 3 in demo figure)
 * Translating empty content to be default 0. (Item 5 in demo figure)
 
-#Demo
+# Demo
 ![Currency TextView Demo](./resPic/figure_s.png)
 
 
@@ -17,7 +17,7 @@ It's common to format numeric text to currency in E-commerce Apps. I am providin
 
 Gradle
 
-```
+```java
 dependencies {
 	compile 'com.hosle.libcurrencyview:libcurrencyview:1.0.0'
 }
@@ -25,7 +25,7 @@ dependencies {
 
 Maven
 
-```
+```java
 <dependency>
   <groupId>com.hosle.libcurrencyview</groupId>
   <artifactId>libcurrencyview</artifactId>
@@ -38,7 +38,7 @@ Maven
 # Usage
 
 ## XML
-```
+```java
 <com.hosle.libcurrencyview.CurrencyTextView
         android:id="@+id/textview1"
         android:layout_width="wrap_content"
@@ -55,7 +55,7 @@ Maven
 ```
 ## In Code
 
-```
+```java
 textView.setSymbol(Currency.getInstance(Locale.getDefault()).getSymbol());
 //default is ¥
 textView.setText("143.22","可用"," 应付款");
