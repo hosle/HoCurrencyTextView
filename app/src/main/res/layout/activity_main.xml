@@ -101,9 +101,11 @@
         android:layout_marginTop="@dimen/currency_margin_top"
         android:text="23454.132"
         android:textSize="16dp"
+        app:currencySymbol="$"
         app:currencySymbolSize="12dp"
         app:decimalTextSize="12dp"
         app:nullToZero="true"
+        app:strikeThrough="true"
         app:prefixSuffixTextSize="12dp" />
 
     <TextView

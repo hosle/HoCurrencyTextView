@@ -8,6 +8,8 @@ import android.text.style.StrikethroughSpan;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
+
 
 /**
  * Created by tanjiahao on 17/7/28.
@@ -130,26 +132,30 @@ public class CurrencyTextView extends TextView implements ICurrencyFeature {
     private Spanny setUpNumberStyle(CharSequence oriPrice){
         Spanny oriPriceChars;
         if (decimalSize != getTextSize())
-            oriPriceChars = setUpLargeSmallCurrency(oriPrice);
+            oriPriceChars = setUpDifDecimal(oriPrice);
         else
             oriPriceChars = new Spanny(oriPrice, new AbsoluteSizeSpan((int) getTextSize(), false));
 
         return oriPriceChars;
     }
 
-    private Spanny setUpLargeSmallCurrency(CharSequence amount) {
+    private Spanny setUpDifDecimal(CharSequence amount) {
         Spanny result = new Spanny();
         try {
-            double origin = Double.parseDouble(amount.toString());
-            double integer = Math.floor(origin);
-            double decimal = origin * 100 - integer * 100;
-            result.append(String.valueOf((int) integer))
+
+            BigDecimal decimalScale = new BigDecimal(100);
+            BigDecimal originD = new BigDecimal(amount.toString());
+            BigDecimal integerD = originD.setScale(0, BigDecimal.ROUND_DOWN);
+            BigDecimal decimalD = originD.multiply(decimalScale).subtract(integerD.multiply(decimalScale));
+
+            result.append(String.valueOf(integerD.intValueExact()))
                     .append(".")
                     .setSpan(new AbsoluteSizeSpan((int) getTextSize(), false), 0, result.length());
-            result.append(String.valueOf((int) decimal), new AbsoluteSizeSpan((int) decimalSize, false));
+            result.append(String.valueOf(decimalD.intValueExact()), new AbsoluteSizeSpan((int) decimalSize, false));
 
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             e.printStackTrace();
+            result.clear();
             result.append(amount, new AbsoluteSizeSpan((int) getTextSize(), false));
         }
         return result;
